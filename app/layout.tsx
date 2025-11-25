@@ -1,20 +1,19 @@
+import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Avniya Cloud Solutions",
-  description: "Cloud, DevOps and Software Development for Business Growth",
+  description: "Cloud, DevOps, Software Development Services",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <body className="bg-bg-dark text-white">
-        <Navbar />
-        <main className="pt-20">{children}</main>
-        <Footer />
-      </body>
+      <body className="bg-bg-dark text-white">{children}</body>
     </html>
   );
 }
